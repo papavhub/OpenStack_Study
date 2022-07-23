@@ -2273,8 +2273,6 @@ class ListServer(command.Lister):
             'changes-since': parsed_args.changes_since,
         }
 
-
-
         if parsed_args.availability_zone:
             search_opts['availability_zone'] = parsed_args.availability_zone
 
@@ -2372,13 +2370,13 @@ class ListServer(command.Lister):
             'id',
             'name',
             'status',
-            'created', ################################################################################################### 1) server list
+            'created',
         )
         column_headers = (
             'ID',
             'Name',
             'Status',
-            'Created', ################################################################################################### 1) server list
+            'Created',
         )
 
         if parsed_args.long:
@@ -4179,12 +4177,9 @@ class ShowServer(command.ShowOne):
         if topology:
             data['topology'] = format_columns.DictColumn(topology)
 
-        ######################################################################
         identity_client = self.app.client_manager.identity
-        project = identity_common.find_project(
-            identity_client,
-            data['project_id']
-        )
+        project = identity_common.find_project(identity_client,
+                                               data['project_id'])
         data["project_name"] = project.name
 
         return zip(*sorted(data.items()))

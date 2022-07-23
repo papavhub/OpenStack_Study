@@ -1,12 +1,10 @@
 Metadata-Version: 2.1
 Name: python-openstackclient
-Version: 5.9.0.dev53
+Version: 0.0.0
 Summary: OpenStack Command-line Client
 Home-page: https://docs.openstack.org/python-openstackclient/latest/
 Author: OpenStack
 Author-email: openstack-discuss@lists.openstack.org
-License: UNKNOWN
-Platform: UNKNOWN
 Classifier: Environment :: OpenStack
 Classifier: Intended Audience :: Information Technology
 Classifier: Intended Audience :: System Administrators
@@ -159,6 +157,4 @@ Authentication using username/password is most commonly used:
 
 If a password is not provided above (in plaintext), you will be interactively
 prompted to provide one securely.
-
-
 

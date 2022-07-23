@@ -30,6 +30,7 @@ from osc_lib import exceptions
 from osc_lib import utils as common_utils
 
 from openstackclient.compute.v2 import server
+from openstackclient.identity import common as identity_common
 from openstackclient.tests.unit.compute.v2 import fakes as compute_fakes
 from openstackclient.tests.unit.image.v2 import fakes as image_fakes
 from openstackclient.tests.unit.network.v2 import fakes as network_fakes
@@ -1392,6 +1393,7 @@ class TestServerCreate(TestServer):
     columns = (
         'OS-EXT-STS:power_state',
         'addresses',
+        'created',
         'flavor',
         'id',
         'image',
@@ -1405,6 +1407,7 @@ class TestServerCreate(TestServer):
             server.PowerStateColumn(
                 getattr(self.new_server, 'OS-EXT-STS:power_state')),
             format_columns.DictListColumn({}),
+            self.new_server.created,
             self.flavor.name + ' (' + self.new_server.flavor.get('id') + ')',
             self.new_server.id,
             self.image.name + ' (' + self.new_server.image.get('id') + ')',
@@ -4296,6 +4299,7 @@ class _TestServerList(TestServer):
         'ID',
         'Name',
         'Status',
+        'Created',
         'Networks',
         'Image',
         'Flavor',
@@ -4304,6 +4308,7 @@ class _TestServerList(TestServer):
         'ID',
         'Name',
         'Status',
+        'Created',
         'Task State',
         'Power State',
         'Networks',
@@ -4399,6 +4404,7 @@ class TestServerList(_TestServerList):
                 s.id,
                 s.name,
                 s.status,
+                s.created,
                 format_columns.DictListColumn(s.networks),
                 # Image will be an empty string if boot-from-volume
                 self.image.name if s.image else server.IMAGE_STRING_FOR_BFV,
@@ -4452,6 +4458,7 @@ class TestServerList(_TestServerList):
                 s.id,
                 s.name,
                 s.status,
+                s.created,
                 getattr(s, 'OS-EXT-STS:task_state'),
                 server.PowerStateColumn(
                     getattr(s, 'OS-EXT-STS:power_state')
@@ -4521,6 +4528,7 @@ class TestServerList(_TestServerList):
                 s.id,
                 s.name,
                 s.status,
+                s.created,
                 format_columns.DictListColumn(s.networks),
                 # Image will be an empty string if boot-from-volume
                 s.image['id'] if s.image else server.IMAGE_STRING_FOR_BFV,
@@ -4549,6 +4557,7 @@ class TestServerList(_TestServerList):
                 s.id,
                 s.name,
                 s.status,
+                s.created,
                 format_columns.DictListColumn(s.networks),
                 # Image will be an empty string if boot-from-volume
                 s.image['id'] if s.image else server.IMAGE_STRING_FOR_BFV,
@@ -4908,6 +4917,7 @@ class TestServerList(_TestServerList):
                 s.id,
                 s.name,
                 s.status,
+                s.created,
                 getattr(s, 'OS-EXT-STS:task_state'),
                 server.PowerStateColumn(
                     getattr(s, 'OS-EXT-STS:power_state')
@@ -4969,6 +4979,7 @@ class TestServerList(_TestServerList):
                 s.id,
                 s.name,
                 s.status,
+                s.created,
                 getattr(s, 'OS-EXT-STS:task_state'),
                 server.PowerStateColumn(
                     getattr(s, 'OS-EXT-STS:power_state')
@@ -5000,6 +5011,7 @@ class TestServerListV273(_TestServerList):
         'ID',
         'Name',
         'Status',
+        'Created',
         'Networks',
         'Image',
         'Flavor',
@@ -5054,6 +5066,7 @@ class TestServerListV273(_TestServerList):
                 s.id,
                 s.name,
                 s.status,
+                s.created,
                 format_columns.DictListColumn(s.networks),
                 # Image will be an empty string if boot-from-volume
                 self.image.name if s.image else server.IMAGE_STRING_FOR_BFV,
@@ -5240,8 +5253,14 @@ class TestServerListV273(_TestServerList):
         next(data)
         partial_server = next(data)
         expected_row = (
-            'server-id-95a56bfc4xxxxxx28d7e418bfd97813a', '',
-            'UNKNOWN', format_columns.DictListColumn({}), '', '')
+            'server-id-95a56bfc4xxxxxx28d7e418bfd97813a',
+            '',
+            'UNKNOWN',
+            '2018-12-03T21:06:18Z',
+            format_columns.DictListColumn({}),
+            '',
+            ''
+        )
         self.assertEqual(expected_row, partial_server)
 
 
@@ -7660,25 +7679,33 @@ class TestServerShow(TestServer):
         self.columns = (
             'OS-EXT-STS:power_state',
             'addresses',
+            'created',
             'flavor',
             'id',
             'image',
             'name',
             'networks',
             'project_id',
+            'project_name',
             'properties',
         )
+
+        self.identity_client = self.app.client_manager.identity
+        self.project = identity_common.find_project(self.identity_client,
+                                                    'tenant-id-xxx')
 
         self.data = (
             server.PowerStateColumn(
                 getattr(self.server, 'OS-EXT-STS:power_state')),
             format_columns.DictListColumn(self.server.networks),
+            self.server.created,
             self.flavor.name + " (" + self.flavor.id + ")",
             self.server.id,
             self.image.name + " (" + self.image.id + ")",
             self.server.name,
             {'public': ['10.20.30.40', '2001:db8::f']},
             'tenant-id-xxx',
+            self.project.name,
             format_columns.DictColumn({}),
         )
 
@@ -7731,7 +7758,7 @@ class TestServerShow(TestServer):
         self.assertEqual(self.columns, columns)
         # Since the flavor details are in a dict we can't be sure of the
         # ordering so just assert that one of the keys is in the output.
-        self.assertIn('original_name', data[2]._value)
+        self.assertIn('original_name', data[3]._value)
 
     def test_show_diagnostics(self):
         arglist = [
@@ -8351,6 +8378,7 @@ class TestServerGeneral(TestServer):
         info = {
             'id': _server.id,
             'name': _server.name,
+            'created': _server.created,
             'image': '%s (%s)' % (_image.name, _image.id),
             'flavor': '%s (%s)' % (_flavor.name, _flavor.id),
             'OS-EXT-STS:power_state': server.PowerStateColumn(
