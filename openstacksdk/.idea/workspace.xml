@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c09f17d4-d44c-4da5-9250-74ade60d4bb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-glanceclient/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../python-glanceclient/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-glanceclient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../python-glanceclient/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,6 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="OS_AUTH_TYPE" value="password" />
         <env name="OS_AUTH_URL" value="http://125.6.36.40/identity" />
         <env name="OS_IDENTITY_API_VERSION" value="3" />
@@ -70,6 +71,7 @@
         <env name="OS_USER_DOMAIN_ID" value="default" />
         <env name="OS_USERNAME" value="admin" />
         <env name="OS_VOLUME_API_VERSION" value="3" />
+        <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../python-openstackclient/openstackclient" />
@@ -78,7 +80,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../python-openstackclient/openstackclient/shell.py" />
-      <option name="PARAMETERS" value="configuration show --mask" />
+      <option name="PARAMETERS" value="configuration show --unmask" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -86,7 +88,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for openstackclient.tests.unit.compute.v2.test_server.TestServerShow.test_show" type="tests" factoryName="py.test" nameIsGenerated="true">
+    <configuration name="pytest for openstackclient.tests.unit.common.test_configuration.TestConfiguration.test_show_unmask" type="tests" factoryName="py.test" nameIsGenerated="true">
       <module name="python-openstackclient" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -99,13 +101,13 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;openstackclient.tests.unit.compute.v2.test_server.TestServerShow.test_show&quot;" />
+      <option name="_new_target" value="&quot;openstackclient.tests.unit.common.test_configuration.TestConfiguration.test_show_unmask&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.shell" />
-      <item itemvalue="Python tests.pytest for openstackclient.tests.unit.compute.v2.test_server.TestServerShow.test_show" />
+      <item itemvalue="Python tests.pytest for openstackclient.tests.unit.common.test_configuration.TestConfiguration.test_show_unmask" />
     </list>
     <recent_temporary>
       <list>
@@ -125,6 +127,7 @@
       <workItem from="1658402766209" duration="5180000" />
       <workItem from="1658539383595" duration="17177000" />
       <workItem from="1658746843970" duration="4922000" />
+      <workItem from="1659144498613" duration="10426000" />
     </task>
     <servers />
   </component>
@@ -157,56 +160,6 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/openstackclient/shell.py</url>
-          <line>144</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/osc_lib/shell.py</url>
-          <line>129</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/osc_lib/shell.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/cliff/app.py</url>
-          <line>279</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/osc_lib/shell.py</url>
-          <line>170</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/osc_lib/shell.py</url>
-          <line>173</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/cliff/app.py</url>
-          <line>364</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/cliff/app.py</url>
-          <line>366</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/cliff/app.py</url>
-          <line>396</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/cliff/app.py</url>
-          <line>401</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/lib/python3.8/site-packages/cliff/commandmanager.py</url>
           <line>96</line>
           <option name="timeStamp" value="24" />
@@ -216,6 +169,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/openstacksdk$pytest_for_openstackclient_tests_unit_compute_v2_test_server_TestServerList_test_server_list_no_option.coverage" NAME="pytest for openstackclient.tests.unit.compute.v2.test_server.TestServerShow.test_show Coverage Results" MODIFIED="1658558748833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/openstacksdk$shell.coverage" NAME="shell Coverage Results" MODIFIED="1658750776586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../python-openstackclient/openstackclient" />
+    <SUITE FILE_PATH="coverage/openstacksdk$pytest_for_openstackclient_tests_unit_common_test_configuration_TestConfiguration_test_show.coverage" NAME="pytest for openstackclient.tests.unit.common.test_configuration.TestConfiguration.test_show_unmask Coverage Results" MODIFIED="1659148800982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/openstacksdk$shell.coverage" NAME="shell Coverage Results" MODIFIED="1659155534848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../python-openstackclient/openstackclient" />
   </component>
 </project>

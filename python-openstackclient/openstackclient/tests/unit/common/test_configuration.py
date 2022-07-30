@@ -25,6 +25,7 @@ class TestConfiguration(utils.TestCommand):
         'auth.token',
         'auth.username',
         'identity_api_version',
+        'password',
         'region',
     )
     datalist = (
@@ -32,6 +33,7 @@ class TestConfiguration(utils.TestCommand):
         configuration.REDACTED,
         fakes.USERNAME,
         fakes.VERSION,
+        configuration.REDACTED,
         fakes.REGION_NAME,
     )
 
@@ -59,9 +61,16 @@ class TestConfiguration(utils.TestCommand):
         cmd = configuration.ShowConfiguration(self.app, None)
         parsed_args = self.check_parser(cmd, arglist, verifylist)
 
-        columns, data = cmd.take_action(parsed_args)
+        col, data = cmd.take_action(parsed_args)
 
-        self.assertEqual(self.columns, columns)
+        columns = (
+            'auth.password',
+            'auth.token',
+            'auth.username',
+            'identity_api_version',
+            'region',
+        )
+        self.assertEqual(columns, col)
         datalist = (
             fakes.PASSWORD,
             fakes.AUTH_TOKEN,

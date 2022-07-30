@@ -1,0 +1,8 @@
+clouds:
+  devstack:
+    auth:
+      auth_url: http://125.6.36.40/identity/
+      project_name: demo
+      username: admin
+      password: secret123
+    region_name: RegionOne

@@ -63,4 +63,7 @@ class ShowConfiguration(command.ShowOne):
                 value = REDACTED
             info['auth.' + key] = value
 
+        if parsed_args.mask:
+            info['password'] = REDACTED
+
         return zip(*sorted(info.items()))
