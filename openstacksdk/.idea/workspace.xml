@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c09f17d4-d44c-4da5-9250-74ade60d4bb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python-glanceclient/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../python-glanceclient/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python-glanceclient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../python-glanceclient/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +58,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="OS_AUTH_TYPE" value="password" />
         <env name="OS_AUTH_URL" value="http://125.6.36.40/identity" />
         <env name="OS_IDENTITY_API_VERSION" value="3" />
@@ -71,7 +70,6 @@
         <env name="OS_USER_DOMAIN_ID" value="default" />
         <env name="OS_USERNAME" value="admin" />
         <env name="OS_VOLUME_API_VERSION" value="3" />
-        <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../python-openstackclient/openstackclient" />
@@ -127,7 +125,8 @@
       <workItem from="1658402766209" duration="5180000" />
       <workItem from="1658539383595" duration="17177000" />
       <workItem from="1658746843970" duration="4922000" />
-      <workItem from="1659144498613" duration="10426000" />
+      <workItem from="1659144498613" duration="11022000" />
+      <workItem from="1659190169730" duration="611000" />
     </task>
     <servers />
   </component>
