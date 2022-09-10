@@ -27,6 +27,7 @@ quota_show = openstackclient.common.quota:ShowQuota
 versions_show = openstackclient.common.versions:ShowVersions
 
 [openstack.compute.v2]
+md_property_create = openstackclient.compute.v2.property:CreatePropertyMd
 aggregate_add_host = openstackclient.compute.v2.aggregate:AddAggregateHost
 aggregate_cache_image = openstackclient.compute.v2.aggregate:CacheImageForAggregate
 aggregate_create = openstackclient.compute.v2.aggregate:CreateAggregate
