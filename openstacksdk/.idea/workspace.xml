@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c09f17d4-d44c-4da5-9250-74ade60d4bb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/openstack/image/v2/metadef.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openstack/image/_base_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/openstack/image/_base_proxy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openstack/image/v2/_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/openstack/image/v2/_proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openstack/image/v2/metadef.py" beforeDir="false" afterPath="$PROJECT_DIR$/openstack/image/v2/metadef.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../python-glanceclient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../python-glanceclient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python-glanceclient/glanceclient/v2/shell.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-glanceclient/glanceclient/v2/shell.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +141,7 @@
       <workItem from="1662193713251" duration="1351000" />
       <workItem from="1662787573578" duration="42383000" />
       <workItem from="1663377729015" duration="330000" />
-      <workItem from="1663378119252" duration="4644000" />
+      <workItem from="1663378119252" duration="14017000" />
     </task>
     <servers />
   </component>
@@ -172,24 +169,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/cliff/app.py</url>
-          <line>78</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/lib/python3.8/site-packages/cliff/commandmanager.py</url>
           <line>72</line>
           <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/cliff/app.py</url>
-          <line>432</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../python-openstackclient/openstackclient/shell.py</url>
-          <line>144</line>
-          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../python-openstackclient/venv/lib/python3.8/site-packages/osc_lib/shell.py</url>
@@ -221,17 +203,12 @@
           <line>284</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/openstack/image/v2/metadef.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/openstacksdk$pytest_for_openstackclient_tests_unit_compute_v2_test_server_TestServerList_test_server_list_no_option.coverage" NAME="pytest for openstackclient.tests.unit.compute.v2.test_server.TestServerShow.test_show Coverage Results" MODIFIED="1658558748833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/openstacksdk$pytest_for_openstackclient_tests_unit_common_test_configuration_TestConfiguration_test_show.coverage" NAME="pytest for openstackclient.tests.unit.common.test_configuration.TestConfiguration.test_show_unmask Coverage Results" MODIFIED="1659148800982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/openstacksdk$shell.coverage" NAME="shell Coverage Results" MODIFIED="1663390690538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../python-openstackclient/openstackclient" />
+    <SUITE FILE_PATH="coverage/openstacksdk$shell.coverage" NAME="shell Coverage Results" MODIFIED="1663400633607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../python-openstackclient/openstackclient" />
   </component>
 </project>

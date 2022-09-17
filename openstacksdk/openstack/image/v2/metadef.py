@@ -28,10 +28,6 @@ class Property(resource.Resource):
 
     _store_unknown_attrs_as_properties = True
 
-    # _query_mapping = resource.QueryParameters(
-    #     "namespace", "name", "title", "description", "enum", "type"
-    # )
-
     _query_mapping = resource.QueryParameters(
         "namespace", "name", "title", "type", "additionalItems", "description", "default", "items", "operators", "enum", "maximum", "minItems", "readonly", "minimum", "maxItems", "maxLength", "uniqueItems", "pattern", "minLength"
     )
@@ -53,7 +49,6 @@ class Property(resource.Resource):
         else:
             fields = {'name': self.name, 'title': self.title}
             fields.update(schema)
-            print("metadef.py fields : ", fields)
 
             # https://docs.openstack.org/api-ref/image/v2/metadefs-index.html?expanded=create-property-detail
             url = urljoin(self.base_path, self.namespace, 'properties')
