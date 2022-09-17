@@ -56,3 +56,4 @@ class Property(resource.Resource):
             response = session.post(url, json=fields)
             exceptions.raise_from_response(response)
             return response
+

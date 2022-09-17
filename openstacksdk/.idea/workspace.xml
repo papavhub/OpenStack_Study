@@ -98,6 +98,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="openstacksdk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest for openstackclient.tests.unit.common.test_configuration.TestConfiguration.test_show_unmask" type="tests" factoryName="py.test" nameIsGenerated="true">
       <module name="python-openstackclient" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,7 +156,7 @@
       <workItem from="1662193713251" duration="1351000" />
       <workItem from="1662787573578" duration="42383000" />
       <workItem from="1663377729015" duration="330000" />
-      <workItem from="1663378119252" duration="14017000" />
+      <workItem from="1663378119252" duration="17501000" />
     </task>
     <servers />
   </component>
