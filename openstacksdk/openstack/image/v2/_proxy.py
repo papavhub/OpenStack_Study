@@ -23,6 +23,8 @@ from openstack.image.v2 import schema as _schema
 from openstack.image.v2 import service_info as _si
 from openstack.image.v2 import task as _task
 
+from openstack.image.v2 import metadef as _metadef
+
 # Rackspace returns this for intermittent import errors
 _IMAGE_ERROR_396 = "Image cannot be imported. Error code: '396'"
 _INT_PROPERTIES = ('min_disk', 'min_ram', 'size', 'virtual_size')
@@ -36,12 +38,15 @@ class Proxy(_base_proxy.BaseImageProxy):
         """
         return self._create(_image.Image, **kwargs)
 
+    def _create_metadata_property(self, **kwargs):
+        return self._create(_metadef.Property, **kwargs)
+
     def import_image(
-        self, image, method='glance-direct', uri=None,
-        store=None,
-        stores=None,
-        all_stores=None,
-        all_stores_must_succeed=None,
+            self, image, method='glance-direct', uri=None,
+            store=None,
+            stores=None,
+            all_stores=None,
+            all_stores_must_succeed=None,
     ):
         """Import data to an existing image
 
@@ -193,13 +198,13 @@ class Proxy(_base_proxy.BaseImageProxy):
         return img
 
     def _upload_image(
-        self, name, filename=None, data=None, meta=None,
-        wait=False, timeout=None, validate_checksum=True,
-        use_import=False,
-        stores=None,
-        all_stores=None,
-        all_stores_must_succeed=None,
-        **kwargs
+            self, name, filename=None, data=None, meta=None,
+            wait=False, timeout=None, validate_checksum=True,
+            use_import=False,
+            stores=None,
+            all_stores=None,
+            all_stores_must_succeed=None,
+            **kwargs
     ):
         # We can never have nice things. Glance v1 took "is_public" as a
         # boolean. Glance v2 takes "visibility". If the user gives us
@@ -256,12 +261,12 @@ class Proxy(_base_proxy.BaseImageProxy):
         return ret
 
     def _upload_image_put(
-        self, name, filename, data, meta,
-        validate_checksum, use_import=False,
-        stores=None,
-        all_stores=None,
-        all_stores_must_succeed=None,
-        **image_kwargs,
+            self, name, filename, data, meta,
+            validate_checksum, use_import=False,
+            stores=None,
+            all_stores=None,
+            all_stores_must_succeed=None,
+            **image_kwargs,
     ):
         if filename and not data:
             image_data = open(filename, 'rb')
@@ -277,8 +282,8 @@ class Proxy(_base_proxy.BaseImageProxy):
 
         image.data = image_data
         supports_import = (
-            image.image_import_methods
-            and 'glance-direct' in image.image_import_methods
+                image.image_import_methods
+                and 'glance-direct' in image.image_import_methods
         )
         if stores or all_stores or all_stores_must_succeed:
             use_import = True

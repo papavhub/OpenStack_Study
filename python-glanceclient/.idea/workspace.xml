@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beadcab0-1114-496b-ac14-9da03962cee3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../openstacksdk/openstack/image/v2/metadef.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../openstacksdk/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../openstacksdk/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python-openstackclient/python_openstackclient.egg-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../python-openstackclient/python_openstackclient.egg-info/entry_points.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python-openstackclient/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/../python-openstackclient/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openstacksdk/openstack/image/_base_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../openstacksdk/openstack/image/_base_proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openstacksdk/openstack/image/v2/_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../openstacksdk/openstack/image/v2/_proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-openstackclient/.idea/python-openstackclient.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../python-openstackclient/.idea/python-openstackclient.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-openstackclient/openstackclient/compute/v2/property.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-openstackclient/openstackclient/compute/v2/property.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/glanceclient/shell.py" />
-      <option name="PARAMETERS" value="md-property-create test-namespace --name property-create --title property-title --schema &quot;{\&quot;description\&quot;: \&quot;test property\&quot;, \&quot;enum\&quot;: [ \&quot;xen\&quot;, \&quot;qemu\&quot;, \&quot;kvm\&quot;, \&quot;lxc\&quot;, \&quot;uml\&quot;, \&quot;vmware\&quot;, \&quot;hyperv\&quot; ], \&quot;type\&quot;: \&quot;string\&quot;}&quot;" />
+      <option name="PARAMETERS" value="md-property-delete test-namespace property-create" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -106,7 +109,8 @@
       <workItem from="1660976774751" duration="5336000" />
       <workItem from="1660982245196" duration="1463000" />
       <workItem from="1662183918610" duration="11789000" />
-      <workItem from="1662787598069" duration="2521000" />
+      <workItem from="1662787598069" duration="23416000" />
+      <workItem from="1663383870118" duration="1369000" />
     </task>
     <servers />
   </component>
@@ -128,53 +132,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
           <line>656</line>
           <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>655</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>477</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>481</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>190</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>201</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>198</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>205</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/shell.py</url>
-          <line>199</line>
-          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/common/utils.py</url>
@@ -208,64 +167,134 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1191</line>
+          <line>1192</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1203</line>
+          <line>1204</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1228</line>
+          <line>1229</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1237</line>
+          <line>1238</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1249</line>
+          <line>1250</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1184</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1251</line>
+          <line>1252</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1252</line>
+          <line>1253</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1253</line>
+          <line>1254</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1230</line>
+          <line>1231</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
-          <line>1231</line>
+          <line>1232</line>
           <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
+          <line>1184</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
+          <line>1188</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
+          <line>1189</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>276</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>279</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>272</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>274</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>265</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
+          <line>1186</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>278</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>277</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>280</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/shell.py</url>
+          <line>1191</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>260</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/glanceclient/v2/metadefs.py</url>
+          <line>261</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_glanceclient$shell.coverage" NAME="shell Coverage Results" MODIFIED="1662795242911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/glanceclient" />
+    <SUITE FILE_PATH="coverage/python_glanceclient$shell.coverage" NAME="shell Coverage Results" MODIFIED="1663390687013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/glanceclient" />
     <SUITE FILE_PATH="coverage/python_glanceclient$Unittests_for_glanceclient_tests_unit_v2_test_shell_v2_ShellV2Test_test_do_md_property_create.coverage" NAME="Unittests for glanceclient.tests.unit.v2.test_shell_v2.ShellV2Test.test_do_md_property_create Coverage Results" MODIFIED="1662195359721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

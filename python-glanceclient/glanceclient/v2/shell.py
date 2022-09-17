@@ -1189,6 +1189,7 @@ def do_md_property_create(gc, args):
         fields = {'name': args.name, 'title': args.title}
         fields.update(schema)
         new_property = gc.metadefs_property.create(args.namespace, **fields)
+        print(new_property)
         utils.print_dict(new_property)
 
 

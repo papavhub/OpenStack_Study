@@ -18,7 +18,6 @@ from openstack import utils
 
 
 class BaseImageProxy(proxy.Proxy, metaclass=abc.ABCMeta):
-
     retriable_status_codes = [503]
 
     _IMAGE_MD5_KEY = 'owner_specified.openstack.md5'
@@ -33,20 +32,20 @@ class BaseImageProxy(proxy.Proxy, metaclass=abc.ABCMeta):
     _SHADE_IMAGE_OBJECT_KEY = 'owner_specified.shade.object'
 
     def create_image(
-        self, name, filename=None,
-        container=None,
-        md5=None, sha256=None,
-        disk_format=None, container_format=None,
-        disable_vendor_agent=True,
-        allow_duplicates=False, meta=None,
-        wait=False, timeout=3600,
-        data=None, validate_checksum=False,
-        use_import=False,
-        stores=None,
-        tags=None,
-        all_stores=None,
-        all_stores_must_succeed=None,
-        **kwargs,
+            self, name, filename=None,
+            container=None,
+            md5=None, sha256=None,
+            disk_format=None, container_format=None,
+            disable_vendor_agent=True,
+            allow_duplicates=False, meta=None,
+            wait=False, timeout=3600,
+            data=None, validate_checksum=False,
+            use_import=False,
+            stores=None,
+            tags=None,
+            all_stores=None,
+            all_stores_must_succeed=None,
+            **kwargs,
     ):
         """Upload an image.
 
@@ -223,12 +222,12 @@ class BaseImageProxy(proxy.Proxy, metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
     def _upload_image(
-        self, name, filename, data, meta, wait, timeout,
-        validate_checksum=True, use_import=False,
-        stores=None,
-        all_stores=None,
-        all_stores_must_succeed=None,
-        **image_kwargs
+            self, name, filename, data, meta, wait, timeout,
+            validate_checksum=True, use_import=False,
+            stores=None,
+            all_stores=None,
+            all_stores_must_succeed=None,
+            **image_kwargs
     ):
         pass
 
@@ -278,3 +277,25 @@ class BaseImageProxy(proxy.Proxy, metaclass=abc.ABCMeta):
             return (os.path.basename(name), name_with_ext)
 
         return (name, None)
+
+    @abc.abstractmethod
+    def _create_metadata_property(self, **image_kwargs):
+        pass
+
+    def create_metadata_property(
+            self, namespace, name, title, schema, **kwargs):
+
+        metadata_properties_kwargs = dict(properties=kwargs)
+
+        if namespace:
+            metadata_properties_kwargs['namespace'] = namespace
+        if name:
+            metadata_properties_kwargs['name'] = name
+        if title:
+            metadata_properties_kwargs['title'] = title
+        if schema:
+            metadata_properties_kwargs['schema'] = schema
+
+        metadata_properties = self._create_metadata_property(**metadata_properties_kwargs)
+        self._connection._get_cache(None).invalidate()
+        return metadata_properties
