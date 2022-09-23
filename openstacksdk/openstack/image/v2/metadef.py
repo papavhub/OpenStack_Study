@@ -16,9 +16,10 @@ import json
 import warlock
 from openstack import exceptions
 
+
 class Property(resource.Resource):
-    resources_key = 'metadefs'
-    base_path = '/metadefs/namespaces'
+    resources_key = 'properties'
+    # base_path = '/metadefs/namespaces'
 
     allow_create = True
     allow_fetch = True
@@ -32,28 +33,31 @@ class Property(resource.Resource):
         "namespace", "name", "title", "type", "additionalItems", "description", "default", "items", "operators", "enum", "maximum", "minItems", "readonly", "minimum", "maxItems", "maxLength", "uniqueItems", "pattern", "minLength"
     )
 
-    namespace = resource.Body('namespace')
-    name = resource.Body('name')
-    title = resource.Body('title')
-    schema = resource.Body('schema')
+    properties = resource.Body('properties', alternate_id=True)
+    # name = resource.Body('name')
+    # title = resource.Body('title')
+    # schema = resource.Body('schema')
+    # namespace_name = resource.URI('namespace_name')
 
-    data = dict()
+    base_path = '/metadefs/namespaces/%(namespace)s/properties' % {'namespace': "test-namespace"}
 
-    def create(self, session, prepend_key=True, base_path=None, **params):
-        """Create a new metadata definitions property inside a namespace."""
+    # data = dict()
 
-        try:
-            schema = json.loads(self.schema)
-        except ValueError:
-            print('Schema is not a valid JSON object.')
-        else:
-            fields = {'name': self.name, 'title': self.title}
-            fields.update(schema)
-
-            # https://docs.openstack.org/api-ref/image/v2/metadefs-index.html?expanded=create-property-detail
-            url = urljoin(self.base_path, self.namespace, 'properties')
-
-            response = session.post(url, json=fields)
-            exceptions.raise_from_response(response)
-            return response
+    # def create(self, session, prepend_key=True, base_path=None, **params):
+    #     """Create a new metadata definitions property inside a namespace."""
+    #
+    #     try:
+    #         schema = json.loads(self.schema)
+    #     except ValueError:
+    #         print('Schema is not a valid JSON object.')
+    #     else:
+    #         fields = {'name': self.name, 'title': self.title}
+    #         fields.update(schema)
+    #
+    #         # https://docs.openstack.org/api-ref/image/v2/metadefs-index.html?expanded=create-property-detail
+    #         url = urljoin(self.base_path, self.namespace, 'properties')
+    #
+    #         response = session.post(url, json=fields)
+    #         exceptions.raise_from_response(response)
+    #         return response
 

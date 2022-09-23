@@ -55,30 +55,43 @@ class CreatePropertyMd(command.Lister):
     def take_action(self, parsed_args):
 
         image_client = self.app.client_manager.image
-        kwargs = {'namespace': parsed_args.namespace, "name": parsed_args.name, "title": parsed_args.title, "schema": parsed_args.schema}
-        metadata_object = image_client.create_metadata_property(**kwargs)
-        schema = eval(metadata_object.text)
+        # kwargs = {'namespace': parsed_args.namespace, "name": parsed_args.name, "title": parsed_args.title, "schema": parsed_args.schema}
 
-        column_headers = (
-            'Property',
-            'Value',
-        )
+        try:
+            schema = json.loads(parsed_args.schema)
+        except ValueError:
+            print('Schema is not a valid JSON object.')
+        else:
+            fields = {'name': parsed_args.name, 'title': parsed_args.title}
+            fields.update(schema)
 
-        columns = (
-            ("description", schema["description"]),
-            ("enum", schema["enum"]),
-            ("name", parsed_args.name),
-            ("title", parsed_args.title),
-            ("type", schema["type"]),
-        )
+            kwargs = {"name": parsed_args.name, "title": parsed_args.title, "type": fields["type"], "enum": fields["enum"], "description": fields["description"]}
+            print(kwargs)
+            metadata_object = image_client.create_metadata_property(**kwargs)
 
-        table = (
-            column_headers,
-            (
-                columns
-            ),
-        )
-        return table
+            # 출력
+            schema = metadata_object.properties
+
+            column_headers = (
+                'Property',
+                'Value',
+            )
+
+            columns = (
+                ("description", schema["description"]),
+                ("enum", schema["enum"]),
+                ("name", parsed_args.name),
+                ("title", parsed_args.title),
+                ("type", schema["type"]),
+            )
+
+            table = (
+                column_headers,
+                (
+                    columns
+                ),
+            )
+            return table
 
 
 # +-------------+----------------------------------------------------------+

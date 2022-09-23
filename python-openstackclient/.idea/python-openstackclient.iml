@@ -7,8 +7,8 @@
     <orderEntry type="jdk" jdkName="Python 3.8 (python-openstackclient)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="osc-lib" />
-    <orderEntry type="module" module-name="openstackTest" />
-    <orderEntry type="module" module-name="openstacksdk-857727" />
+    <orderEntry type="module" module-name="openstacksdk" />
+    <orderEntry type="module" module-name="sandbox" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="py.test" />
