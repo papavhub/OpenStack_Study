@@ -40,6 +40,9 @@ class Proxy(_base_proxy.BaseImageProxy):
 
     def create_metadata_property(self, **kwargs):
         return self._create(_metadef.Property, **kwargs)
+        # self._action(_metadef.Property, **kwargs, "create")
+        # image = self._get_resource(_image.Image, image)
+        # image.deactivate(self)
 
     def import_image(
             self, image, method='glance-direct', uri=None,
