@@ -28,6 +28,10 @@ versions_show = openstackclient.common.versions:ShowVersions
 
 [openstack.compute.v2]
 md-property-create = openstackclient.compute.v2.property:CreatePropertyMd
+md-property-delete = openstackclient.compute.v2.property:DeletePropertyMd
+md-property-show = openstackclient.compute.v2.property:ShowPropertyMd
+md-property-update = openstackclient.compute.v2.property:UpdatePropertyMd
+md-property-list = openstackclient.compute.v2.property:ListPropertyMd
 aggregate_add_host = openstackclient.compute.v2.aggregate:AddAggregateHost
 aggregate_cache_image = openstackclient.compute.v2.aggregate:CacheImageForAggregate
 aggregate_create = openstackclient.compute.v2.aggregate:CreateAggregate

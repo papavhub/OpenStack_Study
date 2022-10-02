@@ -38,11 +38,20 @@ class Proxy(_base_proxy.BaseImageProxy):
         """
         return self._create(_image.Image, **kwargs)
 
-    def create_metadata_property(self, **kwargs):
-        return self._create(_metadef.Property, **kwargs)
-        # self._action(_metadef.Property, **kwargs, "create")
-        # image = self._get_resource(_image.Image, image)
-        # image.deactivate(self)
+    def create_metadata_property(self, namespace_name, **kwargs):
+        return _metadef.Property().create(self, namespace_name, **kwargs)
+
+    def delete_metadata_property(self, namespace_name, property_name):
+        return _metadef.Property().delete(self, namespace_name, property_name)
+
+    def show_metadata_property(self, namespace_name, property_name):
+        return _metadef.Property().show(self, namespace_name, property_name)
+
+    def update_metadata_property(self, namespace_name, property_name, **kwargs):
+        return _metadef.Property().update(self, namespace_name, property_name, **kwargs)
+
+    def list_metadata_property(self, namespace_name):
+        return _metadef.MetadefProperties().list(self, namespace_name)
 
     def import_image(
             self, image, method='glance-direct', uri=None,

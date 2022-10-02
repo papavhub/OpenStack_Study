@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../openstacksdk/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../openstacksdk/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../openstacksdk/openstack/image/v2/_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../openstacksdk/openstack/image/v2/_proxy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../openstacksdk/openstack/image/v2/metadef.py" beforeDir="false" afterPath="$PROJECT_DIR$/../openstacksdk/openstack/image/v2/metadef.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-openstackclient/openstackclient/compute/v2/property.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python-openstackclient/openstackclient/compute/v2/property.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../python-openstackclient/python_openstackclient.egg-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../python-openstackclient/python_openstackclient.egg-info/entry_points.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../python-openstackclient/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/../python-openstackclient/setup.cfg" afterDir="false" />
     </list>
@@ -64,7 +65,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/glanceclient/shell.py" />
-      <option name="PARAMETERS" value="md-property-delete test-namespace property-create" />
+      <option name="PARAMETERS" value="md-property-list test-namespace" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -113,6 +114,7 @@
       <workItem from="1663589208942" duration="2857000" />
       <workItem from="1663986856713" duration="1690000" />
       <workItem from="1664188912865" duration="96000" />
+      <workItem from="1664722985635" duration="7927000" />
     </task>
     <servers />
   </component>
@@ -307,7 +309,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_glanceclient$shell.coverage" NAME="shell Coverage Results" MODIFIED="1663989298796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/glanceclient" />
+    <SUITE FILE_PATH="coverage/python_glanceclient$shell.coverage" NAME="shell Coverage Results" MODIFIED="1664735943833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/glanceclient" />
     <SUITE FILE_PATH="coverage/python_glanceclient$Unittests_for_glanceclient_tests_unit_v2_test_shell_v2_ShellV2Test_test_do_md_property_create.coverage" NAME="Unittests for glanceclient.tests.unit.v2.test_shell_v2.ShellV2Test.test_do_md_property_create Coverage Results" MODIFIED="1662195359721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
